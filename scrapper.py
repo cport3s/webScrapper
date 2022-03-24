@@ -1,14 +1,14 @@
 from selenium import webdriver
 import time
 import csv
-from urlListClass import urlList
+#from urlListClass import urlList
 
 # Vars
 addressList = []
 phoneList = []
 currentUrl = []
-PATH = 'C:\chromedriver.exe'
-#urlList = ['https://www.menu.com.do/#!/n/100_Montaditos','https://www.menu.com.do/#!/n/30_Sinco', 'https://www.menu.com.do/#!/n/Agualaboca']
+PATH = './chromedriver.exe'
+urlList = ['https://www.menu.com.do/#!/n/100_Montaditos','https://www.menu.com.do/#!/n/30_Sinco', 'https://www.menu.com.do/#!/n/Agualaboca']
 
 # Loop url list defined in urlistclass.py
 for url in urlList:
@@ -48,7 +48,3 @@ with open('data.csv', 'w', newline='') as csvFile:
     writer = csv.writer(csvFile)
     for i in range(len(currentUrl)):
         writer.writerow([currentUrl[i], addressList[i], phoneList[i]])
-
-#print(currentUrl)
-#print(addressList)
-#print(phoneList)
